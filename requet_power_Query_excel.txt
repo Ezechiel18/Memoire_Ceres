@@ -1,5 +1,12 @@
-#selction de tous chiffre en première position dane une adresse.
+#Power Query Excel
+#selction de tous chiffre en première position dans une adresse.
 = if List.First(Text.ToList([Adresse])) >= "0" and List.First(Text.ToList([Adresse])) <= "9"
 then Text.BeforeDelimiter([Adresse] & " ", " ")
 else null
+
+#Fusionner les infos de 3 colonnes en un dans Qgis (tout en choissisant 1 si les 3 colonnes contiennent de l'info pour une ligne)
+coalesce("champ1", "champ2", "champ3")
+
+#Arrondir le calcul de superficie 
+round ($area,2 )
 
