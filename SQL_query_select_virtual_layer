@@ -1,0 +1,5 @@
+SELECT p.*
+FROM osmfranceparkingarea_2154 — osmfranceparkingarea AS p
+JOIN site_prelevement_2154 AS z
+  ON ST_Intersects(p.geometry, z.geometry)
+   OR ST_Distance(p.geometry, z.geometry) <= 1000
